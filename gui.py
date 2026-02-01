@@ -11,6 +11,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("install.ui", self)
+        self.stackedWidget.setCurrentIndex(0)
 
         # сигналы
         self.pushButton.clicked.connect(self.on_install)
@@ -40,8 +41,6 @@ class MainWindow(QMainWindow):
             self.disksTable.setItem(row, 2, QTableWidgetItem(str(d["total"] // 1024**3)))
             self.disksTable.setItem(row, 3, QTableWidgetItem(str(d["free"] // 1024**3)))
 
-    def on_back(self):
-        self.stackedWidget.setCurrentIndex(0)
 
 
 if __name__ == "__main__":
