@@ -1,7 +1,7 @@
 # gui.py
 import sys
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
+from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
 import system
@@ -26,10 +26,18 @@ class MainWindow(QMainWindow):
             return
 
         self.stackedWidget.setCurrentIndex(1)
+        self.diskButton2_2.clicked.connect(self.goto2)
         self.diskButton2_1.clicked.connect(self.goto2)
 
     def goto2(self):
         self.stackedWidget.setCurrentIndex(2)
+    
+    def goto3(self):
+        self.stackedWidget.setCurrentIndex(3)
+    
+    self.amdButton.clicked.connect(self.goto3)
+    self.intelButton.clicked.connect(self.goto3)
+    self.nvidiaButton.clicked.connect(self.goto3)
 
 
 
