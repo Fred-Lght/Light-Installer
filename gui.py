@@ -10,6 +10,7 @@ import system
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.disksTable = None
         uic.loadUi("install.ui", self)
         self.stackedWidget.setCurrentIndex(0)
 
@@ -24,22 +25,14 @@ class MainWindow(QMainWindow):
             self.welcomeLabel.setText("Нет интернета")
             return
 
-        self.fill_disks()
         self.stackedWidget.setCurrentIndex(1)
+        self.diskButton2_1.clicked.connect(self.goto2)
 
-    def fill_disks(self):
-        disks = system.get_disks()
-        self.disksTable.setRowCount(len(disks))
-        self.disksTable.setColumnCount(4)
-        self.disksTable.setHorizontalHeaderLabels(
-            ["Диск", "Mount", "Всего (GB)", "Свободно (GB)"]
-        )
+    def goto2(self):
+        self.stackedWidget.setCurrentIndex(2)
 
-        for row, d in enumerate(disks):
-            self.disksTable.setItem(row, 0, QTableWidgetItem(d["device"]))
-            self.disksTable.setItem(row, 1, QTableWidgetItem(d["mount"]))
-            self.disksTable.setItem(row, 2, QTableWidgetItem(str(d["total"] // 1024**3)))
-            self.disksTable.setItem(row, 3, QTableWidgetItem(str(d["free"] // 1024**3)))
+
+
 
 
 
