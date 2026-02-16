@@ -28,16 +28,18 @@ class MainWindow(QMainWindow):
         self.stackedWidget.setCurrentIndex(1)
         self.diskButton2_2.clicked.connect(self.goto2)
         self.diskButton2_1.clicked.connect(self.goto2)
+        self.amdButton.clicked.connect(self.goto3)
+        self.intelButton.clicked.connect(self.goto3)
+        self.nvidiaButton.clicked.connect(self.goto3)
 
     def goto2(self):
         self.stackedWidget.setCurrentIndex(2)
+
+            
     
     def goto3(self):
         self.stackedWidget.setCurrentIndex(3)
     
-    self.amdButton.clicked.connect(self.goto3)
-    self.intelButton.clicked.connect(self.goto3)
-    self.nvidiaButton.clicked.connect(self.goto3)
 
 
 
