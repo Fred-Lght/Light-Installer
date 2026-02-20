@@ -7,6 +7,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow
 import system
 
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -26,21 +27,30 @@ class MainWindow(QMainWindow):
             return
 
         self.stackedWidget.setCurrentIndex(1)
-        self.diskButton2_2.clicked.connect(self.goto2)
-        self.diskButton2_1.clicked.connect(self.goto2)
-        self.amdButton.clicked.connect(self.goto3)
-        self.intelButton.clicked.connect(self.goto3)
-        self.nvidiaButton.clicked.connect(self.goto3)
+        self.diskButton2_2.clicked.connect(self.goto_disk2)
+        self.diskButton2_1.clicked.connect(self.goto_disk2)
+        self.diskButton2_2.clicked.connect(self.goto_disk2)
+        self.amd_button.clicked.connect(self.goto_presets)    
+        self.intel_button.clicked.connect(self.goto_drivers)
+        self.nvidia_button.clicked.connect(self.goto_drivers)
 
-    def goto2(self):
+
+    def goto_disk2(self):
         self.stackedWidget.setCurrentIndex(2)
 
-            
+    def goto_disk3(self):
+        self.stackedWidget.setCurrentIndex(4)
     
-    def goto3(self):
+    def goto_presets(self):
+        self.stackedWidget.setCurrentIndex(5)
+    
+    def goto_drivers(self):
         self.stackedWidget.setCurrentIndex(3)
     
-
+        
+    
+    
+        
 
 
 
