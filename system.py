@@ -32,4 +32,3 @@ def get_disks():
 
     return disks
 
-
