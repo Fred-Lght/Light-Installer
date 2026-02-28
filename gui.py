@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
         self.diskButton2_2.clicked.connect(self.goto_disk2)
         self.amd_button.clicked.connect(self.goto_drivers)    
         self.intel_button.clicked.connect(self.goto_drivers)
-        self.nvidia_button.clicked.connect(self.goto_drivers)
+        self.nvidia_button.clicked.connect(self.goto_end)
         self.dalee_button.clicked.connect(self.goto_end)
 
 
